@@ -94,10 +94,13 @@ El alumno debe usar la opción **include** para cargar los autores de los posts 
 LLegados a este punto ya se ha terminado todo el desarrollo de la práctica.
 
 Solo falta aplicar la migración creada en la tareas anteriores ejecutando:
-      # sistemas unix
-      npm run migrate
-      # sistemas windows
-      npm run migrate_win
+    # sistemas unix
+    npm run migrate
+    # sistemas windows
+    npm run migrate_win
+
+    $ npm run migrate    ## sistemas unix
+    $ npm run migrate_win   ## sistemas windows
 
 y probar el funcionamiento del nuevo servidor.
 
