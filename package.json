@@ -7,7 +7,7 @@
         "githubURL": "CORE-UPM/P8_Autores",
         "serverUrl": "https://autocorector.dit.upm.es/",
         "courseId": "395",
-        "assignmentId": ""
+        "assignmentId": "53406"
     },
     "dependencies": {
         "sequelize": "^6.17.0",
