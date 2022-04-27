@@ -82,7 +82,7 @@ y asignar el valor adecuado al campo **authorId** del post que está creando.
 En esta tarea el alumno debe modificar las vistas **views/posts/show.ejs** y 
 **views/posts/index.ejs** para presentar el **nombre del autor** (`username`) de cada post mostrado.
 Si algún post no tiene autor, debe mostrarse el texto **Anonymous** en vez del nombre del autor.
-Para mostrar el nombre, se puede utilizar cualquier etiqueta HTML, pero se debe utilizar el id **author** en el caso del formulario, y la clase **author** en el caso del índice de posts.
+Para mostrar el nombre, se puede utilizar cualquier etiqueta HTML, pero se debe utilizar el id **author** en el caso del formulario (**views/posts/show.ejs**), y la clase **author** en el caso del índice de posts (**views/posts/index.ejs**).
 
 Cuando se renderizan las vistas anteriores, el autor de cada post debe estar accesible en la propiedad **author** de los objetos **Post** sacados de la base de datos. 
 Para ello se debe realizar una carga ansiosa de los autores al recuperar los posts de la BBDD.
@@ -94,8 +94,10 @@ El alumno debe usar la opción **include** para cargar los autores de los posts 
 LLegados a este punto ya se ha terminado todo el desarrollo de la práctica.
 
 Solo falta aplicar la migración creada en la tareas anteriores ejecutando:
-
+      # sistemas unix
       npm run migrate
+      # sistemas windows
+      npm run migrate_win
 
 y probar el funcionamiento del nuevo servidor.
 
