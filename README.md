@@ -10,7 +10,7 @@ Versión: 25 de Enero de 2023
 
 ## Descripción de la práctica
 
-En esta práctica 8 se ampliará la **Práctica 7 Autenticación** para poder registrar que usuario ha sido el autor de cada post.
+En esta práctica 9 se ampliará la **Práctica 8 Autenticación** para poder registrar que usuario ha sido el autor de cada post.
 
 Para ello se modificará la tabla **Posts** de la BBDD añadiendo un nuevo campo llamado **authorId**.
 En este campo se guardará el **id** del usuario que ha creado el post, que es el usuario que ha realizado login. 
@@ -29,16 +29,16 @@ Instrucciones [aquí](https://github.com/CORE-UPM/Instrucciones_Practicas/blob/m
 
 ### Tarea 1 - Copiar el trabajo ya realizado en la Entrega 7 Autenticación
 
-En esta práctica hay que continuar y ampliar el desarrollo realizado en la práctica 7.
+En esta práctica hay que continuar y ampliar el desarrollo realizado en la práctica 8.
 
-El alumno debe copiar el directorio **blog** de la **P7_autenticacion** en el directorio **P8_Autores/blog** de
-esta práctica 8. Las tareas a realizar en esta práctica 8 de desarrollarán dentro del directorio **P8_Autores/blog**.
+El alumno debe copiar el directorio **blog** de la **P8_autenticacion** en el directorio **P9_Autores/blog** de
+esta práctica 9. Las tareas a realizar en esta práctica 9 de desarrollarán dentro del directorio **P9_Autores/blog**.
 
-Para copiar/duplicar el directorio **P7_autenticacion/blog** en el directorio **P8_Autores/blog**, puede usar un
+Para copiar/duplicar el directorio **P8_autenticacion/blog** en el directorio **P9_Autores/blog**, puede usar un
 explorador de archivos. Asegúrese de copiar el directorio y no de moverlo de sitio, para no perder el trabajo original.
 También puede ejecutar el siguiente comando en un terminal unix para copiar el directorio y todo su contenido:
 
-    $ cp -r PATH_DE_PRACTICA_7/P7_autenticacion/blog PATH_DE_PRACTICA_8/P8_Autores/.
+    $ cp -r PATH_DE_PRACTICA_8/P8_autenticacion/blog PATH_DE_PRACTICA_9/P9_Autores/.
 
 ### Tarea 2 - Definir la relación 1-a-N entre los modelos
 
