@@ -102,8 +102,23 @@ Instrucciones [aquí](https://github.com/CORE-UPM/Instrucciones_Practicas/blob/m
 
 Capturas a entregar con esta práctica: 
 
-- Captura 1:
-- Captura 2:
+- Captura 1: Captura de la pantalla que muestra el listado de todos los posts. 
+  Deben verse varios posts con sus imágenes adjuntas, y el nombre de su autor.
+<kbd>
+<img src="https://github.com/CORE-UPM/P9_Autores/blob/master/Captura.9.1.png" alt="captura de pantalla" width="500"/>
+</kbd>
+
+- Captura 2: Captura de una pantalla que muestre un post que no tenga autor. 
+  Debe mostrarse el contenido del post con su imagen adjunta, y anónimo como  nombre del autor.
+<kbd>
+<img src="https://github.com/CORE-UPM/P9_Autores/blob/master/Captura.9.2.png" alt="captura de pantalla" width="500"/>
+</kbd>
+
+- Captura 3: Captura de una pantalla que muestre un post que tenga autor. 
+  Debe mostrarse el contenido del post con su imagen adjunta, y el nombre del autor.
+<kbd>
+<img src="https://github.com/CORE-UPM/P9_Autores/blob/master/Captura.9.3.png" alt="captura de pantalla" width="500"/>
+</kbd>
 
 ## Instrucciones para la Entrega y Evaluación.
 
