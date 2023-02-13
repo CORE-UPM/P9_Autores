@@ -1,7 +1,7 @@
 
 # Práctica 9: Autores
 
-Versión: 25 de Enero de 2023
+Versión: 13 de Febrero de 2023
 
 ## Objetivos
 
@@ -105,19 +105,19 @@ Capturas a entregar con esta práctica:
 - Captura 1: Captura de la pantalla que muestra el listado de todos los posts. 
   Deben verse varios posts con sus imágenes adjuntas, y el nombre de su autor.
 <kbd>
-<img src="https://github.com/CORE-UPM/P9_Autores/blob/master/Captura.9.1.png" alt="captura de pantalla" width="500"/>
+<img src="https://user-images.githubusercontent.com/716928/218466803-67df6944-2c9d-4838-80f1-f26c15554482.png" alt="captura de pantalla" width="500"/>
 </kbd>
 
 - Captura 2: Captura de una pantalla que muestre un post que no tenga autor. 
   Debe mostrarse el contenido del post con su imagen adjunta, y anónimo como  nombre del autor.
 <kbd>
-<img src="https://github.com/CORE-UPM/P9_Autores/blob/master/Captura.9.2.png" alt="captura de pantalla" width="500"/>
+<img src="https://user-images.githubusercontent.com/716928/218466838-b6f50c23-8948-49c5-90d4-f3024e4bcf20.png" alt="captura de pantalla" width="500"/>
 </kbd>
 
 - Captura 3: Captura de una pantalla que muestre un post que tenga autor. 
   Debe mostrarse el contenido del post con su imagen adjunta, y el nombre del autor.
 <kbd>
-<img src="https://github.com/CORE-UPM/P9_Autores/blob/master/Captura.9.3.png" alt="captura de pantalla" width="500"/>
+<img src="https://user-images.githubusercontent.com/716928/218466853-9371054d-80cf-4f9a-806b-41945c40091c.png" alt="captura de pantalla" width="500"/>
 </kbd>
 
 ## Instrucciones para la Entrega y Evaluación.
