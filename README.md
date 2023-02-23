@@ -1,7 +1,7 @@
 
-# Práctica 8: Autores
+# Práctica 9: Autores
 
-Versión: 26 de Abril de 2022
+Versión: 13 de Febrero de 2023
 
 ## Objetivos
 
@@ -10,7 +10,7 @@ Versión: 26 de Abril de 2022
 
 ## Descripción de la práctica
 
-En esta práctica 8 se ampliará la **Práctica 7 Autenticación** para poder registrar que usuario ha sido el autor de cada post.
+En esta práctica 9 se ampliará la **Práctica 8 Autenticación** para poder registrar que usuario ha sido el autor de cada post.
 
 Para ello se modificará la tabla **Posts** de la BBDD añadiendo un nuevo campo llamado **authorId**.
 En este campo se guardará el **id** del usuario que ha creado el post, que es el usuario que ha realizado login. 
@@ -23,30 +23,22 @@ y en esta práctica se registrará quién es el autor de los posts creados.
 
 ## Descargar el código del proyecto
 
-Es necesario utilizar la **versión 16 de Node.js** para el desarrollo de esta práctica.
-El proyecto debe clonarse en el ordenador en el que se está trabajando:
-
-    $ git clone https://github.com/CORE-UPM/P8_Autores
-
-A continuación se debe acceder al directorio de trabajo, e instalar todas las dependencias propias de esta práctica.
-
-    $ cd P8_Autores
-    $ npm install
+Instrucciones [aquí](https://github.com/CORE-UPM/Instrucciones_Practicas/blob/main/README.md#descargar-el-c%C3%B3digo-del-proyecto).
 
 ## Tareas
 
-### Tarea 1 - Copiar el trabajo ya realizado en la Entrega 7 Autenticación
+### Tarea 1 - Copiar el trabajo ya realizado en la Entrega 8 Autenticación
 
-En esta práctica hay que continuar y ampliar el desarrollo realizado en la práctica 7.
+En esta práctica hay que continuar y ampliar el desarrollo realizado en la práctica 8.
 
-El alumno debe copiar el directorio **blog** de la **P7_autenticacion** en el directorio **P8_Autores/blog** de
-esta práctica 8. Las tareas a realizar en esta práctica 8 de desarrollarán dentro del directorio **P8_Autores/blog**.
+El alumno debe copiar el directorio **blog** de la **P8_autenticacion** en el directorio **P9_Autores/blog** de
+esta práctica 9. Las tareas a realizar en esta práctica 9 de desarrollarán dentro del directorio **P9_Autores/blog**.
 
-Para copiar/duplicar el directorio **P7_autenticacion/blog** en el directorio **P8_Autores/blog**, puede usar un
+Para copiar/duplicar el directorio **P8_autenticacion/blog** en el directorio **P9_Autores/blog**, puede usar un
 explorador de archivos. Asegúrese de copiar el directorio y no de moverlo de sitio, para no perder el trabajo original.
 También puede ejecutar el siguiente comando en un terminal unix para copiar el directorio y todo su contenido:
 
-    $ cp -r PATH_DE_PRACTICA_7/P7_autenticacion/blog PATH_DE_PRACTICA_8/P8_Autores/.
+    $ cp -r PATH_DE_PRACTICA_8/P8_autenticacion/blog PATH_DE_PRACTICA_9/P9_Autores/.
 
 ### Tarea 2 - Definir la relación 1-a-N entre los modelos
 
@@ -100,44 +92,42 @@ Solo falta aplicar la migración creada en la tareas anteriores ejecutando:
 
 y probar el funcionamiento del nuevo servidor.
 
+## Pruebas con el autocorector
 
-## Prueba de la práctica
+Instrucciones [aquí](https://github.com/CORE-UPM/Instrucciones_Practicas/blob/main/README.md#pruebas-con-el-autocorector).
 
-Para ayudar al desarrollo, se provee una herramienta de autocorrección que prueba las distintas funcionalidades que se piden en el enunciado. Para utilizar esta herramienta debes tener node.js (y npm) (https://nodejs.org/es/) y Git instalados.
+## Pruebas manuales y capturas de pantalla
 
-Para instalar y hacer uso de la herramienta de autocorrección en el ordenador local, ejecuta los siguientes comandos en el directorio raíz del proyecto, es decir, en el directorio padre del directorio **post**:
+Instrucciones [aquí](https://github.com/CORE-UPM/Instrucciones_Practicas/blob/main/README.md#pruebas-manuales-y-capturas-de-pantalla).
 
-    $ sudo npm install -g autocorector    ## Instala el programa de test
-    $ autocorector                   ## Pasa los tests al fichero a entregar
-    ............................     ## en el directorio de trabajo
-    ... (resultado de los tests)
+Capturas a entregar con esta práctica: 
 
-También se puede instalar como paquete local, en el caso de que no dispongas de permisos en
-el ordenador en el que estás trabajando:
+- Captura 1: Captura de la pantalla que muestra el listado de todos los posts. 
+  Deben verse varios posts con sus imágenes adjuntas, y el nombre de su autor.
+<kbd>
+<img src="https://user-images.githubusercontent.com/716928/218466803-67df6944-2c9d-4838-80f1-f26c15554482.png" alt="captura de pantalla" width="500"/>
+</kbd>
 
-    $ npm install autocorector     ## Instala el programa de test
-    $ npx autocorector             ## Pasa los tests al fichero a entregar
-    ............................   ## en el directorio de trabajo
-    ... (resultado de los tests)
+- Captura 2: Captura de una pantalla que muestre un post que no tenga autor. 
+  Debe mostrarse el contenido del post con su imagen adjunta, y anónimo como  nombre del autor.
+<kbd>
+<img src="https://user-images.githubusercontent.com/716928/218466838-b6f50c23-8948-49c5-90d4-f3024e4bcf20.png" alt="captura de pantalla" width="500"/>
+</kbd>
 
-Se puede pasar la herramienta de autocorrección tantas veces como se desee sin ninguna repercusión en la calificación.
-
-
+- Captura 3: Captura de una pantalla que muestre un post que tenga autor. 
+  Debe mostrarse el contenido del post con su imagen adjunta, y el nombre del autor.
+<kbd>
+<img src="https://user-images.githubusercontent.com/716928/218466853-9371054d-80cf-4f9a-806b-41945c40091c.png" alt="captura de pantalla" width="500"/>
+</kbd>
 
 ## Instrucciones para la Entrega y Evaluación.
 
-Una vez satisfecho con su calificación, el alumno puede subir su entrega a Moodle con el siguiente comando:
+Instrucciones [aquí](https://github.com/CORE-UPM/Instrucciones_Practicas/blob/main/README.md#instrucciones-para-la-entrega-y-evaluaci%C3%B3n
+).
 
-    $ autocorector --upload
+## Rúbrica
 
-o, si se ha instalado como paquete local:
-
-    $ npx autocorector --upload
-
-La herramienta de autocorrección preguntará por el correo del alumno y el token de Moodle.
-En el enlace **https://www.npmjs.com/package/autocorector** se proveen instrucciones para encontrar dicho token.
-
-**RÚBRICA**: Se puntuará el ejercicio a corregir sumando el % indicado a la nota total si la parte indicada es correcta:
+Se puntuará el ejercicio a corregir sumando el % indicado a la nota total si la parte indicada es correcta:
 
 - **20%:** Si hay un usuario logueado y crea un post, entonces el campo **authorId** del post debe ser igual al **id** del usuario logueado.
 - **15%:** Si no hay un usuario logueado y se crea un post, entonces el campo **authorId** del post debe estar vacío.
