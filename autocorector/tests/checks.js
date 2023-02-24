@@ -134,7 +134,7 @@ describe("Tests Práctica 9", function() {
 
 
             let bin_path = path.join(PATH_ASSIGNMENT, "bin", "www");
-            server = spawn('node', [bin_path], {env: {PORT: TEST_PORT, DATABASE_URL: db_relative_url}});
+            server = spawn('node', [bin_path], {env: {PORT: TEST_PORT, DATABASE_URL: db_relative_url, PATH: process.env.PATH}});
             server.stdout.setEncoding('utf-8');
             server.stdout.on('data', function(data) {
                 debug('Salida del servidor: ', data);
