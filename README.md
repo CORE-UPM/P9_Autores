@@ -1,7 +1,7 @@
 
 # Práctica 9: Autores
 
-Versión: 13 de Febrero de 2023
+Versión: 25 de Febrero de 2023
 
 ## Objetivos
 
