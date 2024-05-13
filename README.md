@@ -1,7 +1,7 @@
 
 # Práctica 9: Autores
 
-Versión: 23 de Febrero de 2024
+Versión: 13 de Mayo de 2024
 
 ## Objetivos
 
@@ -62,8 +62,8 @@ Esta migración debe modificar la tabla **Posts** de la BBDD añadiendo el campo
 Si hay un usuario logueado, éste será el autor de los posts que cree.
 En este caso se guardará el valor del campo **id** del usuario, en el campo **authorId** de cada post creado.
 
-Si no hay usuario logueado, no puede saberse quién es el autor de los posts creados.
-En este caso se dejara vacio el campo **authorId** de los posts creados.
+Si no hay usuario logueado, no puede saberse quién es el autor de los nuevos posts creados.
+En este caso, se dejará vacío el campo **authorId** de los posts creados.
 
 El alumno debe adaptar el middleware **create** del controlador de los posts para ver si hay un usuario logueado o no, 
 y asignar el valor adecuado al campo **authorId** del post que está creando.
