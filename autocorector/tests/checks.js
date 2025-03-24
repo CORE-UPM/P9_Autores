@@ -37,46 +37,146 @@ describe("Tests Práctica 9", function() {
             fs.existsSync(path.join(PATH_ASSIGNMENT, "views", "layout.ejs")).should.be.equal(true);
         });
 
+
+        scored(`Comprobar que las plantillas express-partials tienen los componentes adecuados`, -1, async function () {
+            this.msg_ok = 'Se incluyen todos los elementos necesarios en la plantilla';
+            this.msg_err = 'No se ha encontrado todos los elementos necesarios';
+            let checks = {
+                "layout.ejs": {
+                    true: [/<%- body %>/g, /<header/, /<\/header>/, /<nav/, /<\/nav/, /<main/, /<\/main/, /<footer/, /<\/footer>/]
+                },
+                "index.ejs": {
+                    true: [/<h1/, /<\/h1>/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("posts", "index.ejs")]: {
+                    true: [/<section/, /<\/section>/, /<article/, /<\/article>/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("posts", "show.ejs")]: {
+                    true: [/<article/, /<\/article>/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("posts", "new.ejs")]: {
+                    true: [/<form/, /<\/form>/, /include/, /_form\.ejs/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("posts", "edit.ejs")]: {
+                    true: [/<form/, /<\/form>/, /include/, /_form\.ejs/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("posts", "_form.ejs")]: {
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("attachments", "_attachment.ejs")]: {
+                    true: [/<img/, /\/images\/none.png/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("users", "index.ejs")]: {
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("users", "show.ejs")]: {
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("users", "new.ejs")]: {
+                    true: [/<form/, /<\/form>/, /include/, /_form\.ejs/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("users", "edit.ejs")]: {
+                    true: [/<form/, /<\/form>/, /include/, /_form\.ejs/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("users", "_form.ejs")]: {
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                },
+                [path.join("session", "new.ejs")]: {
+                    true: [/<form/, /<\/form>/],
+                    false: [/<body/, /<\/body>/, /<html/, /<\/html>/, /<nav/, /<\/nav>/]
+                }
+            }
+
+            for (fpath in checks) {
+                this.msg_err = `No se encuentra el fichero ${fpath}`;
+                let templ = fs.readFileSync(path.join(PATH_ASSIGNMENT, "views", fpath), "utf8");
+                for(status in checks[fpath]) {
+                    elements = checks[fpath][status];
+                    for(var elem in elements){
+                        const shouldbe = (status == 'true');
+                        let e = elements[elem];
+                        if (shouldbe) {
+                            this.msg_err = `${fpath} no incluye ${e}`;
+                        } else {
+                            this.msg_err = `${fpath} incluye ${e}, pero debería haberse borrado`;
+                        }
+                        e.test(templ).should.be.equal(shouldbe);
+                    }
+                }
+            }
+        });
+
         scored(`Comprobar que la migración y el seeder para Usuarios existen (P7)`, -1, async function () {
             this.msg_ok = 'Se incluye la migración y el seeder';
-            this.msg_err = "No se incluye la migración o el seeder";
 
-            let mig = fs.readdirSync(path.join(PATH_ASSIGNMENT, "migrations")).filter(fn => fn.endsWith('-CreateUsersTable.js'));
-            this.msg_err = `No se ha encontrado la migración`;
-
+            this.msg_err = `No se ha encontrado la migración que crea la tabla Posts`;
+            let mig = fs.readdirSync(path.join(PATH_ASSIGNMENT, "migrations")).filter(fn => fn.endsWith('-CreatePostsTable.js'));
             (mig.length).should.be.equal(1);
+
+            this.msg_err = `No se ha encontrado la migración que crea la tabla Attachments`;
+            mig = fs.readdirSync(path.join(PATH_ASSIGNMENT, "migrations")).filter(fn => fn.endsWith('-CreateAttachmentsTable.js'));
+            (mig.length).should.be.equal(1);
+
+            this.msg_err = `No se ha encontrado la migración que crea la tabla Users`;
+            mig = fs.readdirSync(path.join(PATH_ASSIGNMENT, "migrations")).filter(fn => fn.endsWith('-CreateUsersTable.js'));
+            (mig.length).should.be.equal(1);
+
             this.msg_err = `La migración no incluye el campo email`;
             debug(mig[0]);
             let templ = fs.readFileSync(path.join(PATH_ASSIGNMENT, "migrations", mig[0]));
             /email/.test(templ).should.be.equal(true);
 
 
-            let seed = fs.readdirSync(path.join(PATH_ASSIGNMENT, "seeders")).filter(fn => fn.endsWith('-FillUsersTable.js'));
-            this.msg_err = 'No se ha encontrado el seeder';
-            (seed.length).should.be.equal(1);
-            // We could use a regex here to check the date
-        });
-
-        scored(`Comprobar que la migración añadir authorId existe`, -1, async function () {
-            this.msg_ok = 'Se incluye la migración';
-            this.msg_err = "No se incluye la migración o el seeder";
-
-            let mig = fs.readdirSync(path.join(PATH_ASSIGNMENT, "migrations")).filter(fn => fn.endsWith('-AddAuthorIdToPostsTable.js'));
-            this.msg_err = `No se ha encontrado la migración`;
-
+            this.msg_err = `No se ha encontrado la migración que añade el campo authorId a la tabla Post`;
+            mig = fs.readdirSync(path.join(PATH_ASSIGNMENT, "migrations")).filter(fn => fn.endsWith('-AddAuthorIdToPostsTable.js'));
             (mig.length).should.be.equal(1);
             this.msg_err = `La migración no incluye el campo authorId`;
             debug(mig[0]);
-            let templ = fs.readFileSync(path.join(PATH_ASSIGNMENT, "migrations", mig[0]));
+            templ = fs.readFileSync(path.join(PATH_ASSIGNMENT, "migrations", mig[0]));
             /authorId/.test(templ).should.be.equal(true);
+
+            let seed = fs.readdirSync(path.join(PATH_ASSIGNMENT, "seeders")).filter(fn => fn.endsWith('-FillUsersTable.js'));
+            this.msg_err = 'No se ha encontrado el seeder';
+            (seed.length).should.be.equal(1);
         });
 
         scored(`Comprobar que los controladores existen`, -1, async function () {
-            this.msg_ok = 'Se incluyen los controladores de usuarios y sesiones';
+            this.msg_ok = 'Se incluyen los controladores de posts, usuarios y sesiones';
+
+            this.msg_err = "No se incluye el controlador de post";
+            await checkFileExists(path.resolve(path.join(PATH_ASSIGNMENT, 'controllers', 'post')));
+
+            let postCtrl = require(path.resolve(path.join(PATH_ASSIGNMENT, 'controllers', 'post')));
+            for (let mw of ["load", "index", "show", "new", "create", "edit", "update", "destroy", "attachment" ]) {
+                this.msg_err = `Falta el middleware ${mw} en el controlador de los posts`;
+                postCtrl[mw].should.not.be.undefined;
+            }
+
             this.msg_err = "No se incluye el controlador de usuarios";
             await checkFileExists(path.resolve(path.join(PATH_ASSIGNMENT, 'controllers', 'user')));
+
+            const userCtrl = require(path.resolve(path.join(PATH_ASSIGNMENT, 'controllers', 'user')));
+            for (let mw of ["load", "index", "show", "new", "create", "edit", "update", "destroy"]) {
+                this.msg_err = `Falta el middleware ${mw} en el controlador de los usuarios`;
+                userCtrl[mw].should.not.be.undefined;
+            }
+
             this.msg_err = "No se incluye el controlador de sesiones";
             await checkFileExists(path.resolve(path.join(PATH_ASSIGNMENT, 'controllers', 'session')));
+
+            const sessionCtrl = require(path.resolve(path.join(PATH_ASSIGNMENT, 'controllers', 'session')));
+            for (let mw of ["new", "create", "destroy"]) {
+                this.msg_err = `Falta el middleware ${mw} en el controlador de las sesiones`;
+                sessionCtrl[mw].should.not.be.undefined;
+            }
         });
 
         scored(`Comprobar que se ha añadido el código para incluir los comandos adecuados (P6)`, -1, async function () {

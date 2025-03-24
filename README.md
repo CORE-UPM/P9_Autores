@@ -1,7 +1,7 @@
 
 # Práctica 9: Autores
 
-Versión: 13 de Mayo de 2024
+Versión: 24 de Marzo de 2025
 
 ## Objetivos
 
@@ -52,8 +52,7 @@ y cumplir con los siguientes requisitos:
 * Use el nombre **"posts"** como alias al indicar que un usuario tiene muchos posts de los que es el autor.
 * Use el nombre **"author"** como alias al indicar que un post pertenece al usuario que ha sido su autor.
 
-El alumno también tiene que crear una migración en un fichero con nombre **migrations/YYYYMMDDhhmmss-AddAuthorIdToPostsTabl
-e.js**.
+El alumno también tiene que crear una migración en un fichero con nombre **migrations/YYYYMMDDhhmmss-AddAuthorIdToPostsTable.js**.
 Esta migración debe modificar la tabla **Posts** de la BBDD añadiendo el campo **authorId**.
 
 
@@ -74,8 +73,12 @@ y asignar el valor adecuado al campo **authorId** del post que está creando.
 En esta tarea el alumno debe modificar las vistas **views/posts/show.ejs** y 
 **views/posts/index.ejs** para presentar el **nombre del autor** (`username`) de cada post mostrado.
 Si algún post no tiene autor, debe mostrarse el texto **Anonymous** en vez del nombre del autor.
-Para mostrar el nombre, se puede utilizar cualquier etiqueta HTML, pero se debe utilizar el id **author** en el caso de la
-vista que muestra un post (**views/posts/show.ejs**), y la clase **author** en el caso del índice de posts (**views/posts/index.ejs**).
+
+El nombre del autor se debe mostrar en la vista show (**views/posts/show.ejs**) usando cualquier etiqueta HTML, 
+pero esta etiqueta debe utilizar el atributo **id** con el valor **author**.
+
+El nombre de los autores se debe mostrar en la vista index (**views/posts/index.ejs**) usando cualquier etiqueta HTML,
+pero deben utilizar el atributo **clase** con el valor **author**.
 
 Cuando se renderizan las vistas anteriores, el autor de cada post debe estar accesible en la propiedad **author** de los objetos **Post** sacados de la base de datos. 
 Para ello se debe realizar una carga ansiosa de los autores al recuperar los posts de la BBDD.
