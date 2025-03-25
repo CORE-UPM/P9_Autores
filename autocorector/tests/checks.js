@@ -286,7 +286,7 @@ describe("Tests Práctica 9", function() {
                 browser.assert.status(200)
                 await browser.fill('#username', user.username);
                 await browser.fill('#password', user.password);
-                await browser.pressButton('input[name=commit]');
+                await browser.pressButton('form input[type="submit"]');
                 // It should not redirect to the login page
                 debug(browser.location.href);
                 browser.location.href.includes("login").should.be.equal(false);
@@ -300,12 +300,12 @@ describe("Tests Práctica 9", function() {
                 this.msg_err = 'No se puede crear un nuevo post';
                 browser.assert.element('#title');
                 browser.assert.element('#body');
-                browser.assert.element('#enviar');
+                browser.assert.element('form input[type="submit"]');
                 const title = `Titulo con usuario ${user.username} raw`;
                 const body = `Cuerpo con usuario ${user.username} raw`;
                 await browser.fill('#title', title);
                 await browser.fill('#body', body);
-                await browser.pressButton('#enviar');
+                await browser.pressButton('form input[type="submit"]');
                 browser.assert.status(200);
 
                 this.msg_err = `No se encuentra el post creado en la base de datos`;
@@ -332,12 +332,12 @@ describe("Tests Práctica 9", function() {
             this.msg_err = 'No se puede crear un nuevo post';
             browser.assert.element('#title');
             browser.assert.element('#body');
-            browser.assert.element('#enviar');
+            browser.assert.element('form input[type="submit"]');
             const title = 'Post con usuario anónimo';
             const body = 'Cuerpo con usuario anónimo';
             await browser.fill('#title', title);
             await browser.fill('#body', body);
-            await browser.pressButton('#enviar');
+            await browser.pressButton('form input[type="submit"]');
             browser.assert.status(200);
 
             this.msg_err = `No se encuentra el post creado en la base de datos`;
@@ -362,7 +362,7 @@ describe("Tests Práctica 9", function() {
                 browser.assert.status(200)
                 await browser.fill('#username', user.username);
                 await browser.fill('#password', user.password);
-                await browser.pressButton('input[name=commit]');
+                await browser.pressButton('form input[type="submit"]');
                 // It should not redirect to the login page
                 debug(browser.location.href);
                 browser.location.href.includes("login").should.be.equal(false);
@@ -376,10 +376,10 @@ describe("Tests Práctica 9", function() {
                 this.msg_err = 'No se puede crear un nuevo post';
                 browser.assert.element('#title');
                 browser.assert.element('#body');
-                browser.assert.element('#enviar');
+                browser.assert.element('form input[type="submit"]');
                 await browser.fill('#title','Post con usuario');
                 await browser.fill('#body', 'Cuerpo con usuario');
-                await browser.pressButton('#enviar');
+                await browser.pressButton('form input[type="submit"]');
                 browser.assert.status(200);
 
                 this.msg_err = `La página de visualización del nuevo post no muestra el nombre del autor correcto`;
@@ -401,10 +401,10 @@ describe("Tests Práctica 9", function() {
                 this.msg_err = 'No se puede crear un nuevo post';
                 browser.assert.element('#title');
                 browser.assert.element('#body');
-                browser.assert.element('#enviar');
+                browser.assert.element('form input[type="submit"]');
                 await browser.fill('#title','Post con usuario anónimo');
                 await browser.fill('#body', 'Cuerpo con usuario anónimo');
-                await browser.pressButton('#enviar');
+                await browser.pressButton('form input[type="submit"]');
                 browser.assert.status(200);
 
                 this.msg_err = `La página de visualización del nuevo post no muestra el nombre del autor correcto`;
