@@ -139,6 +139,7 @@ Antes de evaluar la práctica se realizarán un serie de comprobaciones:
 - Se han creado los scripts pedidos en package.json.
 
 Una vez superadas las comprobaciones anteriores,
+se puntuará la práctica sumando el % indicado a la nota total si la parte indicada es correcta:
 
 - **0%:** Tablas de la BBDD correctas.
 - **20%:** Si hay un usuario logueado y crea un post, entonces el campo **authorId** del post debe ser igual al **id** del usuario logueado.
