@@ -1,7 +1,7 @@
 
 # Práctica 9: Autores
 
-Versión: 24 de Marzo de 2025
+Versión: 27 de Marzo de 2025
 
 ## Objetivos
 
@@ -131,8 +131,16 @@ Instrucciones [aquí](https://github.com/CORE-UPM/Instrucciones_Practicas/blob/m
 
 ## Rúbrica
 
-Se puntuará el ejercicio a corregir sumando el % indicado a la nota total si la parte indicada es correcta:
+Antes de evaluar la práctica se realizarán un serie de comprobaciones:
+- Existe el directorio blog.
+- Las tablas de la base de datos son correctas.
+- Se ha usado correctamente el marco de aplicación.
+- Existen los ficheros pedidos: controladores, migraciones, seeders, ...
+- Se han creado los scripts pedidos en package.json.
 
+Una vez superadas las comprobaciones anteriores,
+
+- **0%:** Tablas de la BBDD correctas.
 - **20%:** Si hay un usuario logueado y crea un post, entonces el campo **authorId** del post debe ser igual al **id** del usuario logueado.
 - **15%:** Si no hay un usuario logueado y se crea un post, entonces el campo **authorId** del post debe estar vacío.
 - **20%:** Si un post tiene autor, entonces la vista **show** de ese post debe mostrar el nombre del autor.
