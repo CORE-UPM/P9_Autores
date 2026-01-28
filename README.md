@@ -1,12 +1,19 @@
 
 # Práctica 9: Autores
 
-Versión: 27 de Marzo de 2025
+Versión: 28 de Enero de 2026
 
 ## Objetivos
 
 * Afianzar los conocimientos obtenidos sobre el uso de Express para desarrollar servidores web.
 * Aprender a manejar relaciones entre los modelos de la BBDD.
+
+
+## Dependencias
+
+Para realizar la práctica el alumno deberá tener instalado en su ordenador:
+- Herramienta GIT para gestión de repositorios [Github](https://git-scm.com/downloads)
+- Entorno de ejecución de javascript [NodeJS](https://nodejs.org/es/download/) versión 22.
 
 ## Descripción de la práctica
 
@@ -91,8 +98,7 @@ LLegados a este punto ya se ha terminado todo el desarrollo de la práctica.
 
 Solo falta aplicar la migración creada en la tareas anteriores ejecutando:
 
-    $ npm run migrate    ## sistemas unix
-    $ npm run migrate_win   ## sistemas windows
+    $ npm run migrate
 
 y probar el funcionamiento del nuevo servidor.
 

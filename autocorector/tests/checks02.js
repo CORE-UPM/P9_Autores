@@ -114,6 +114,12 @@ describe("Tests Práctica 9", function() {
             }
         });
 
+        scored(`Comprobar que se ha creado el fichero de configuración de Sequelize`, -1, async function () {
+            this.msg_ok = 'Se incluye config/config.json';
+            this.msg_err = 'No se ha encontrado config/config.json';
+            fs.existsSync(path.join(PATH_ASSIGNMENT, "config", "config.json")).should.be.equal(true);
+        });
+
         scored(`Comprobar que la migración y el seeder para Usuarios existen (P7)`, -1, async function () {
             this.msg_ok = 'Se incluye la migración y el seeder';
 
