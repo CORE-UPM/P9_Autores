@@ -9,10 +9,10 @@
         "githubURL": "CORE-UPM/P9_Autores",
         "serverUrl": "https://aat.dit.upm.es/",
         "courseId": "395",
-        "assignmentId": "8552"
+        "assignmentId": "41290"
     },
     "dependencies": {
-        "autocorector": "^3.2.2",
+        "autocorector": "^4.0.1",
         "sequelize": "^6.17.0",
         "sequelize-cli": "^6.4.1",
         "sqlite3": "^5.0.2"
